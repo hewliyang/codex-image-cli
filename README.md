@@ -45,3 +45,13 @@ const result = await generateImage({
   size: "1024x1024",
 });
 ```
+
+## Agent skill
+
+This package includes an agent skill adapted from Codex's image generation guidance for the `img-gen` CLI:
+
+```text
+skills/img-gen/SKILL.md
+```
+
+Use it when an agent should generate/edit raster images via the installed CLI instead of a built-in image tool.
