@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Runtime / logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Bun
+.bun/
+
+# Generated artifacts
+coverage/
+.generated/
+generated-artifacts/

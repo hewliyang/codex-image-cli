@@ -1,0 +1,40 @@
+{
+  "name": "@hewliyang/codex-image-cli",
+  "version": "0.1.0",
+  "description": "Standalone Node.js CLI/SDK for generating/editing images via the ChatGPT Codex image_generation backend.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "img-gen": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('node:fs').chmodSync('dist/index.js', 0o755)\"",
+    "check": "tsc --noEmit",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run check && npm run build",
+    "pack:dry-run": "npm pack --dry-run"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "typescript": "^5.9.3"
+  },
+  "license": "MIT"
+}
