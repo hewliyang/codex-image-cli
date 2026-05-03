@@ -55,3 +55,11 @@ skills/img-gen/SKILL.md
 ```
 
 Use it when an agent should generate/edit raster images via the installed CLI instead of a built-in image tool.
+
+The skill also bundles:
+
+```text
+skills/img-gen/scripts/remove_chroma_key.py
+```
+
+for chroma-key-to-alpha post-processing when native transparent output is not good enough.

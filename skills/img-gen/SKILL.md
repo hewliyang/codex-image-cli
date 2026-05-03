@@ -140,7 +140,7 @@ Try native transparency first:
 img-gen -b transparent -o cutout.png "<subject>, isolated, transparent background, no shadow, no text, no watermark"
 ```
 
-If transparency is ignored or edges are poor, rerun with a flat chroma-key background and remove it locally with whatever image tooling is available in the environment:
+If transparency is ignored or edges are poor, rerun with a flat chroma-key background and remove it with the bundled helper script:
 
 ```text
 Create the requested subject on a perfectly flat solid #00ff00 chroma-key background for background removal.
@@ -149,6 +149,23 @@ Keep the subject fully separated from the background with crisp edges and genero
 Do not use #00ff00 anywhere in the subject.
 No cast shadow, no contact shadow, no reflection, no watermark, and no text unless explicitly requested.
 ```
+
+Then run:
+
+```bash
+python <skill-dir>/scripts/remove_chroma_key.py \
+  --input chroma-source.png \
+  --out cutout.png \
+  --auto-key border \
+  --soft-matte \
+  --transparent-threshold 12 \
+  --opaque-threshold 220 \
+  --despill
+```
+
+Resolve `<skill-dir>` from wherever this skill was installed, for example `skills/img-gen` in this package checkout. The helper requires Pillow (`python -m pip install Pillow` or `uv pip install Pillow`).
+
+Validate that the output has an alpha channel, transparent corners, plausible subject coverage, and no obvious key-color fringe. If a thin fringe remains, retry once with `--edge-contract 1`.
 
 Use magenta `#ff00ff` instead of green if the subject is green.
 
