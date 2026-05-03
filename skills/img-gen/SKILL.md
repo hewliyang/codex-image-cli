@@ -92,6 +92,11 @@ Do not use `img-gen` when:
 
 ## Prompting guidance
 
+Detailed prompting guidance lives in:
+
+- `references/prompting.md`
+- `references/sample-prompts.md`
+
 Order prompts as: scene/backdrop -> subject -> key details -> constraints -> output intent.
 
 For complex requests, use short labeled lines:

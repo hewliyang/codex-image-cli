@@ -59,7 +59,9 @@ Use it when an agent should generate/edit raster images via the installed CLI in
 The skill also bundles:
 
 ```text
+skills/img-gen/references/prompting.md
+skills/img-gen/references/sample-prompts.md
 skills/img-gen/scripts/remove_chroma_key.py
 ```
 
-for chroma-key-to-alpha post-processing when native transparent output is not good enough.
+for prompt guidance, copy/paste recipes, and chroma-key-to-alpha post-processing when native transparent output is not good enough.
